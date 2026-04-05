@@ -48,10 +48,9 @@ pytest tests/   # 运行测试 (不需GPU)
 - GPU服务器需设 `export HF_ENDPOINT=https://hf-mirror.com`
 
 ## 当前状态
-- V1 代码完成, 合成数据流程已跑通
-- Products-10K 真实数据集已下载，适配器已写好
-- 下一步: 真实数据评测 → commit V1 → V2 LoRA
-- 详见 docs/design.md
+- V1 已完成并 tag v1.0 (leaf_top1=24.6% on Products-10K 9691 SKU)
+- 下一步: V2 LoRA 微调 Q-Former
+- 详见 docs/design.md, docs/devlog.md
 
 ## 进度同步
 - 开始工作前先读取 orbit 项目笔记获取上下文：
