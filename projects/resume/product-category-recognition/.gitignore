@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Model weights & cache
+models/
+*.bin
+*.safetensors
+.cache/
+
+# Embeddings & index (generated at runtime)
+embeddings/
+indices/
+
+# Data (generated/downloaded at runtime)
+data/images/
+data/products.csv
+data/anchor_products.csv
+data/test_products.csv
+
+# Results (generated at runtime)
+results/
+
+# System
+.DS_Store
+Thumbs.db
+
+# Docker
+.worktrees/
+
+# Jupyter
+.ipynb_checkpoints/
