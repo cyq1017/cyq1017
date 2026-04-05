@@ -3,18 +3,18 @@
 ## 2026-04-06
 
 **完成:**
-- Products-10K 数据集下载 (19GB) + 解压
-- 数据适配器 `data/products10k_adapter.py` 编写完成
+- Products-10K 数据集下载 (19GB) + 解压 + 适配器
+- 真实数据评测完成: leaf_top1=24.6%, l2_top1=25.4%, l1_top1=31.6%
+- V1 commit + tag v1.0 (3264行, 40文件)
 - 项目规范化: CLAUDE.md, docs/, orbit笔记更新
-- 真实数据离线+评测全流程在GPU上运行中
 
 **阻塞/待解决:**
-- 等待真实数据评测结果
-- text-image embedding空间对齐效果待验证
+- V2 LoRA微调待开始
 
 **踩坑记录:**
 - Products-10K 解压后图片在 `train/train/` 嵌套目录下
-- train.csv 有额外的 `group` 列（之前假设只有 name+class）
+- train.csv 有额外的 `group` 列
+- 9691 SKU zero-shot top1=24.6%，距目标72%差距大，需LoRA微调
 
 ---
 
