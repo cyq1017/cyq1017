@@ -53,11 +53,14 @@ pytest tests/   # 运行测试 (不需GPU)
 - 详见 docs/design.md, docs/devlog.md
 
 ## Orbit 交接协议
-- 开始工作时读取上下文：
+- 开始工作时：
   `obsidian vault=claudecode_workspace read file="商品类目识别"`
-- 结束工作时追加交接记录（≤500 token）：
+- 结束工作时（≤500 token）：
   `obsidian vault=claudecode_workspace append file="商品类目识别" content="交接记录"`
+- 只读状态：
+  `obsidian vault=claudecode_workspace property:read name=status file="商品类目识别"`
 - 交接记录含：完成/放弃的方案/技术下一步
+- 注意：用 file= 不用 path=
 
 ## 进度同步
 - 阶段性完成时更新 orbit 笔记进展 + docs/devlog.md

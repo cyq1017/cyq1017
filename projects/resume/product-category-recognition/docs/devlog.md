@@ -1,5 +1,24 @@
 # 开发日志 — 多模态商品类目识别
 
+## 2026-04-07
+
+**完成:**
+- 项目规范化: CLAUDE.md checklist 对照补全，Orbit 交接协议切回 CLI
+- 全局 rules 生效: execution-discipline.md, orbit-handoff.md
+- Memory 清理: 行为规则类 feedback 迁移到全局 rules，删除冗余条目
+- .gitignore 补充 docs/dialogs/*.jsonl
+- 错题本首次建立: QA-商品类目识别(4条), AI错误-商品类目识别(6条)
+
+**阻塞/待解决:**
+- GPU服务器上的 Kaggle token 下次开机需清理: `rm /root/.kaggle/kaggle.json`
+- V2 LoRA 微调待下次会话启动
+
+**踩坑记录:**
+- memory vs CLAUDE.md/rules 职责要区分清楚
+- Obsidian CLI installer 需更新才能用（已更新）
+
+---
+
 ## 2026-04-06
 
 **完成:**
