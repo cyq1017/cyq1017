@@ -52,11 +52,16 @@ pytest tests/   # 运行测试 (不需GPU)
 - 下一步: V2 LoRA 微调 Q-Former
 - 详见 docs/design.md, docs/devlog.md
 
+## Orbit 交接协议
+- 开始工作时读取上下文：
+  `obsidian vault=claudecode_workspace read file="商品类目识别"`
+- 结束工作时追加交接记录（≤500 token）：
+  `obsidian vault=claudecode_workspace append file="商品类目识别" content="交接记录"`
+- 交接记录含：完成/放弃的方案/技术下一步
+
 ## 进度同步
-- 开始工作前先读取 orbit 项目笔记获取上下文：
-  /Users/caoyuqi/claudecode_workspace/orbit/20_项目/商品类目识别.md
 - 阶段性完成时更新 orbit 笔记进展 + docs/devlog.md
-- 结束工作时更新 orbit 笔记 + 更新启动提示词 + commit
+- 结束工作时更新 orbit 笔记 + commit
 
 ## SOP 参考（需要时读取，不要全部加载）
 - 开发流程: /Users/caoyuqi/claudecode_workspace/orbit/30_研究/AI工程/开发流程SOP.md
