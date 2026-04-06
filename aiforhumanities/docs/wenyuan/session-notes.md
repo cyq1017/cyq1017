@@ -11,65 +11,67 @@
 | v1 | 2026-03-31 | `4f366c0c` | `docs/wenyuan/v1-session-2026-03-31/` |
 | v2 | 2026-04-05~06 | `e75ee652` | `docs/wenyuan/v2-session-2026-04-05/` |
 
-每个归档包含该轮对话的 `implementation_plan.md`、`task.md`、`walkthrough.md`（如有）。
-
-> **注意：** docs 目录只做本地 commit，不推送到 remote（wenyuan 仓库只推 vault 内容）。
+> **注意：** docs 目录只做本地 commit，不推送到 remote。
 
 ---
 
-## 最近 Session: 2026-04-06 (v2.3)
+## 最近 Session: 2026-04-06 (v2.4 执行中)
 
-### 完成工作
+### 当前状态：v2.3 Review Notes 执行中
 
-**v2.0 (基础重构):**
-- [x] 仓库重组：vault 移入 `wenyuan/` 子目录，git 指向 `cyq1017/wenyuan`
-- [x] Skills 全面迁移：14 个 skill 到 `.claude/skills/` + `.agents/skills/`
-- [x] 新增 `/research`、`/brainstorm`、`/academic-feed`
-- [x] 所有路径引用更新：20_论文 → 20_项目
-- [x] 所有模板去 emoji
-- [x] settings.json 权限修复
-- [x] CLAUDE.md / GEMINI.md / AGENTS.md 配置分工
+Review Notes 位于：`docs/wenyuan/v2.3-review-notes.md`
 
-**v2.1 (文档完善):**
-- [x] README 增加文渊命名来源和 LLM 知识库愿景
-- [x] start-my-day 集成学术动态推送
-- [x] 新建 Obsidian 新手指南（含 Terminal、Web Clipper 插件配置）
-- [x] 新建 Claude Code 新手指南（含 cc-switch、国内订阅、防封号）
-- [x] 重写快速上手教程（具体场景：纸质笔记 OCR 归档）
-- [x] 使用指南扩展个性化定制教程
+| 编号 | 文件 | 状态 | commit |
+|------|------|------|--------|
+| R-1~R-6 | README.md + AGENTS.md + GEMINI.md | ✅ 已完成 | `eff06b7` |
+| C-1~C-5 | Claude Code 新手指南 | ✅ 已完成 | `14eab57` |
+| O-1~O-5 | Obsidian 新手指南 | ✅ 已完成 | `b5e4b71` |
+| G-1~G-5 | 文渊使用指南 | ⏳ 待执行 |  |
+| T-1~T-2 | 快速上手教程 | ⏳ 待执行 |  |
 
-**v2.2 (end-my-day):**
-- [x] 新增 `/end-my-day` 每日复盘（参考本地 orbit，含对话归档）
-- [x] 所有配置文件同步更新
+### 待执行要点（G 和 T）
 
-**v2.3 (用户反馈修订):**
-- [x] README 愿景改写为更含蓄的表达（文渊阁典故）
-- [x] 不限定文科，改为"主要面向人文社科，任何学科可定制"
-- [x] start-my-day 标注推送学术动态
-- [x] academic-feed 标注为已集成到 start-my-day
-- [x] "开始之前"改为内部教程链接跳转，去掉费用冗余
-- [x] Claude Code 指南：cc-switch 改正确链接、新增国内中转平台、鼓励问 AI
-- [x] Obsidian 指南：标明必装插件、整合外部教程链接
-- [x] Tutorial 重写为"想法→计划→项目→执行→积累"流程
-- [x] Tutorial 加入 start-my-day / end-my-day 介绍
-- [x] Tutorial 加入自建 skill（OCR 归档）作为个性化定制示例
-- [x] FAQ 加入手机同步和个性化定制入口
+**G-1**: start-my-day 描述补充（交互问答 + 推送 + 生成日记），skill 列表补全
+**G-2**: 日记模板改为四区域（阅读与思考、项目进展、灵感与想法、当日总结）
+**G-3**: 50_资源/ 加入学术动态 digest 机制，偏好设置加"信息订阅"区域，tutorial 中引导用户设定
+**G-4**: iCloud 同步路径说明
+**G-5**: 个性化定制加"先跟 Claude Code 商量"的建议
+**T-1**: 检查文渊依赖的 Obsidian 插件（Canvas、Templater？），教用户装插件
+**T-2**: 空 vault 先写收件箱想法，给出"数字人文 distant reading"具体示例，演示流程链
 
-### 关键决策记录
-- 主推 Claude Code + 终端（Obsidian Terminal 插件内使用）
-- Obsidian + Claude Code 是一个整体，不是分开的工具
-- 替代模型方案用 OpenRouter/cc-switch，完全合规
-- docs/ 只做本地 commit，不推 remote
-- remote 只推 wenyuan vault 本身的内容
-- Karpathy 式知识库升级留 v3
+### 已完成的改动汇总
 
-### 待办 / 下一步
-- [ ] 用户在 Obsidian 中实际测试完整工作流
-- [ ] 验证 Terminal 插件内 Claude Code 对 skills 的识别
-- [ ] v3 愿景规划：AI 自动编译知识库、健康检查、自动关联
+**README (R-1~R-6):**
+- 愿景改为"文以载道，渊博知识" + "越用越有价值"说明
+- 去掉"主要面向人文社科"，改为"为学术研究设计，自由调整"
+- 所有 `[[]]` wikilinks 加上 GitHub 相对路径链接
+- 命令行方式前加终端说明
+- 其他 AI 工具：Codex CLI 提前 + 增加 Kimi Code
+- FAQ 措辞调整
+
+**AGENTS.md + GEMINI.md (R-6):**
+- 去掉"文科研究者"限定
+- "必须使用中文"改为"默认使用中文交流"
+- 语气对齐 CLAUDE.md（"像一位经验丰富的学术前辈"）
+
+**Claude Code 指南 (C-1~C-5):**
+- 开头逻辑修复：安装前问 ChatGPT，安装后问 Claude Code
+- 方案排序：Anthropic 第一 → cc-switch 第二 → 中转平台第三
+- 国内 Token 订阅平台链接（Kimi/DeepSeek/智谱/百炼/MiniMax）
+- 中转平台设置方法改为具体终端命令
+- 学习资源加 B站/知乎/小红书/公众号搜索关键词
+- FAQ "不确定怎么操作"逻辑修复
+
+**Obsidian 指南 (O-1~O-5):**
+- Frontmatter 详细解释 + 字段说明
+- 社区 Skills 介绍（obsidian-cli, defuddle, Axton 三件套）+ 安装命令
+- iCloud 同步路径
+- 笔记迁移加 `/organize` 归类
+- 链接加 GitHub 路径
 
 ### 项目状态
 - **仓库位置**: `/Users/caoyuqi/aiforhumanities/wenyuan/`
 - **GitHub**: https://github.com/cyq1017/wenyuan
-- **当前版本**: v2.3（已推送 remote）
-- **最后 commit (remote)**: bc73f6c
+- **当前本地最新 commit**: `b5e4b71`（还未 push）
+- **remote 最新**: `bc73f6c`（v2.3）
+- **Review Notes**: `docs/wenyuan/v2.3-review-notes.md`
