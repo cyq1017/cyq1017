@@ -1,5 +1,28 @@
 # 开发日志 — 多模态商品类目识别
 
+## 2026-04-08
+
+**完成:**
+- V2 LoRA 微调方案 brainstorming + design spec 完成
+  - 设计文档: `docs/superpowers/specs/2026-04-08-v2-lora-finetune-design.md`
+  - 实现计划: `docs/superpowers/plans/2026-04-08-v2-lora-finetune.md` (11个task)
+- 关键设计决策:
+  - ITC loss 训练，text side 用 LM word_embeddings（和 V1 推理路径一致）
+  - LoRA 只加在 Q-Former self-attention + cross-attention (q,k,v)
+  - LLM 生成类目描述（MiniMax API），替代简单类目名
+  - 500 类目子集 ~20K 商品，70/30 train/test split
+- Spec + Plan 经过 review 修订（修复 text path 不一致、LoRA scope 错误等）
+
+**阻塞/待解决:**
+- 开始执行 V2 Plan（Task 1-7 本地，Task 8-10 需 GPU）
+- GPU 服务器 Kaggle token 待清理
+
+**踩坑记录:**
+- Spec review 发现 ITC 训练 text path 和 V1 推理不一致 — CRITICAL，已修复
+- Plan review 发现 LoRA 应用范围过大（全模型而非仅 Q-Former）— HIGH，已修复
+
+---
+
 ## 2026-04-07
 
 **完成:**

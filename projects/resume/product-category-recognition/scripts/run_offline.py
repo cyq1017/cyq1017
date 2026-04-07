@@ -5,6 +5,7 @@ Generates embeddings for anchor products and category descriptions,
 then builds FAISS indexes for fast retrieval.
 """
 
+import argparse
 import sys
 from pathlib import Path
 
@@ -23,6 +24,11 @@ from src.offline.index_builder import build_faiss_index
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Offline embedding generation")
+    parser.add_argument("--lora-adapter", default=None,
+                        help="Path to LoRA adapter checkpoint")
+    args = parser.parse_args()
+
     # Load config
     config_path = PROJECT_ROOT / "config" / "default.yaml"
     with open(config_path, "r", encoding="utf-8") as f:
@@ -39,6 +45,7 @@ def main():
         model_name=config["model"]["name"],
         device=config["model"]["device"],
         dtype=config["model"]["dtype"],
+        lora_adapter_path=args.lora_adapter,
     )
 
     # Step 1: Generate anchor product embeddings

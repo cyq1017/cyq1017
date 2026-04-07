@@ -27,7 +27,8 @@ class BLIP2Encoder:
     """
 
     def __init__(self, model_name: str = "Salesforce/blip2-opt-2.7b",
-                 device: str = "cuda", dtype: str = "float16"):
+                 device: str = "cuda", dtype: str = "float16",
+                 lora_adapter_path: str | None = None):
         self.device = torch.device(device if torch.cuda.is_available() else "cpu")
         self.dtype = getattr(torch, dtype)
 
@@ -37,6 +38,13 @@ class BLIP2Encoder:
             model_name, torch_dtype=self.dtype
         ).to(self.device)
         self.model.eval()
+
+        if lora_adapter_path is not None:
+            from peft import PeftModel
+            print(f"Loading LoRA adapter: {lora_adapter_path}")
+            self.model = PeftModel.from_pretrained(self.model, lora_adapter_path)
+            self.model.eval()
+
         print("BLIP2 model loaded.")
 
     def _get_vision_embeds(self, pixel_values: torch.Tensor) -> torch.Tensor:
@@ -158,17 +166,25 @@ class BLIP2Encoder:
         """Batch multimodal embedding extraction. Returns [N, D] tensor."""
         all_embeddings = []
         for i in range(0, len(texts), batch_size):
+            batch_texts = texts[i:i + batch_size]
             batch_images = images[i:i + batch_size]
 
+            # Image embedding via Q-Former
             inputs = self.processor(images=batch_images, return_tensors="pt")
             pixel_values = inputs["pixel_values"].to(self.device, dtype=self.dtype)
-
             image_embeds = self._get_vision_embeds(pixel_values)
             projected = self._qformer_with_vision(image_embeds)
+            img_emb = projected.mean(dim=1)  # [B, D]
 
-            # Mean pool over query tokens → [B, D]
-            embeddings = projected.mean(dim=1)
-            embeddings = F.normalize(embeddings.float(), dim=-1)
+            # Text embedding via LM word embeddings
+            txt_inputs = self.processor(text=batch_texts, return_tensors="pt",
+                                         padding=True, truncation=True)
+            input_ids = txt_inputs["input_ids"].to(self.device)
+            txt_emb = self.model.language_model.get_input_embeddings()(input_ids).mean(dim=1)
+
+            # Weighted combination (image-dominant for multimodal)
+            combined = 0.7 * img_emb.float() + 0.3 * txt_emb.float()
+            embeddings = F.normalize(combined, dim=-1)
             all_embeddings.append(embeddings.cpu())
 
         return torch.cat(all_embeddings, dim=0)
