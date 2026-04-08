@@ -3,23 +3,26 @@
 ## 2026-04-08
 
 **完成:**
-- V2 LoRA 微调方案 brainstorming + design spec 完成
-  - 设计文档: `docs/superpowers/specs/2026-04-08-v2-lora-finetune-design.md`
-  - 实现计划: `docs/superpowers/plans/2026-04-08-v2-lora-finetune.md` (11个task)
-- 关键设计决策:
-  - ITC loss 训练，text side 用 LM word_embeddings（和 V1 推理路径一致）
-  - LoRA 只加在 Q-Former self-attention + cross-attention (q,k,v)
-  - LLM 生成类目描述（MiniMax API），替代简单类目名
-  - 500 类目子集 ~20K 商品，70/30 train/test split
-- Spec + Plan 经过 review 修订（修复 text path 不一致、LoRA scope 错误等）
+- V2 LoRA 全流程完成（设计→编码→训练→评测）
+- 设计: spec + plan 经 review 修订完成
+- 编码: Task 1-7 完成，17 个新测试（40 总计，38 本地通过）
+- 数据: 500 类目子集，13680 train / 6190 test，GLM API 生成 500 条类目描述
+- 训练: 3 epochs, ITC loss 2.75→2.63→2.59，LoRA rank=8，可训练参数 724,992 (0.02%)
+- V2 评测结果（500 类目子集）:
+  - leaf_top1: 61.7% → 68.1% (+6.4%)
+  - l2_top1: 65.2% → 70.5% (+5.3%)
+  - l1_top1: 84.1% → 86.9% (+2.8%)
+- Checkpoint 已回传本地，Kaggle token 已清理
 
 **阻塞/待解决:**
-- 开始执行 V2 Plan（Task 1-7 本地，Task 8-10 需 GPU）
-- GPU 服务器 Kaggle token 待清理
+- Task 10 rank 对比实验（rank=4/16）待下次 GPU 会话
 
 **踩坑记录:**
 - Spec review 发现 ITC 训练 text path 和 V1 推理不一致 — CRITICAL，已修复
 - Plan review 发现 LoRA 应用范围过大（全模型而非仅 Q-Former）— HIGH，已修复
+- MiniMax API key 失败（401），改用 GLM API（glm-4-flash）成功
+- run_offline.py 期望 title/description 字段，V2 CSV 没有，写独立 run_v2_eval.py
+- heredoc 写入 f-string 引号被吃掉，sed 修复
 
 ---
 
