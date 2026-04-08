@@ -29,48 +29,23 @@
 
 ### 📚 Featured Projects
 
-<table>
-  <tr>
-    <td align="center" width="50%">
-      <a href="https://github.com/cyq1017/wenyuan">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=cyq1017&repo=wenyuan&theme=tokyonight&hide_border=true" alt="WenYuan"/>
-      </a>
-      <br/>
-      <sub><b>🏛️ WenYuan 文渊</b> — AI-Driven Academic Productivity System</sub>
-      <br/>
-      <sub>Obsidian + Claude Code · 12 slash commands · For humanities researchers</sub>
-    </td>
-    <td align="center" width="50%">
-      <a href="https://github.com/cyq1017/CarClaw-Demo">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=cyq1017&repo=CarClaw-Demo&theme=tokyonight&hide_border=true" alt="CarClaw"/>
-      </a>
-      <br/>
-      <sub><b>🚗 CarClaw</b> — Open-Source Automotive AI Assistant</sub>
-      <br/>
-      <sub>Drive-mode state machines · Safety interception · Voice control</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="50%">
-      <a href="https://github.com/cyq1017/mcp-antigravity-bridge">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=cyq1017&repo=mcp-antigravity-bridge&theme=tokyonight&hide_border=true" alt="MCP Bridge"/>
-      </a>
-      <br/>
-      <sub><b>🌉 MCP Antigravity Bridge</b> — Cross-Platform AI Agent Collaboration</sub>
-      <br/>
-      <sub>Model Context Protocol · Multi-agent orchestration</sub>
-    </td>
-    <td align="center" width="50%">
-      <a href="https://github.com/cyq1017/skills">
-        <img src="https://github-readme-stats.vercel.app/api/pin/?username=cyq1017&repo=skills&theme=tokyonight&hide_border=true" alt="Skills"/>
-      </a>
-      <br/>
-      <sub><b>⚡ Skills</b> — Reusable AI Agent Skills Collection</sub>
-      <br/>
-      <sub>Plug-and-play skills for Claude Code & LLM agents</sub>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <a href="https://github.com/cyq1017/wenyuan">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=cyq1017&repo=wenyuan&theme=tokyonight&hide_border=true" alt="WenYuan"/>
+  </a>
+</p>
+
+<p align="center">
+  <b>🏛️ WenYuan 文渊</b> — AI-Driven Academic Productivity System<br/>
+  Obsidian + Claude Code · 12 Slash Commands · Built for Humanities Researchers<br/><br/>
+  <a href="https://github.com/cyq1017/wenyuan/stargazers"><img src="https://img.shields.io/github/stars/cyq1017/wenyuan?style=social" alt="Stars"/></a>
+  &nbsp;
+  <a href="https://github.com/cyq1017/wenyuan/network/members"><img src="https://img.shields.io/github/forks/cyq1017/wenyuan?style=social" alt="Forks"/></a>
+</p>
+
+<p align="center">
+  <sub>🚀 More projects coming soon — stay tuned!</sub>
+</p>
 
 ---
 
