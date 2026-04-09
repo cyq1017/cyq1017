@@ -20,10 +20,17 @@
 
 ### 🧠 About Me
 
-- 🔭 I'm currently working on **AI-powered productivity tools** for researchers
-- 🌱 I'm deeply into **Agentic AI**, **Multimodal Models**, and **NLP**
-- 🛠️ I build with **Python** · **TypeScript** · **Obsidian** · **Claude Code**
-- 💡 I believe AI should empower everyone, especially those outside of tech
+- 🔭 I build **frameworks for humans working with AI agents** — not just tools, but methodologies
+- 🎵 Creator of **[Conductor](https://github.com/cyq1017/conductor)** — orchestrate multiple AI coding agents with structured handoff
+- 🏛️ Creator of **[WenYuan 文渊](https://github.com/cyq1017/wenyuan)** — AI-powered academic system for humanities researchers
+- 🌱 Deep expertise in **Agentic AI**, **Multimodal Models**, and **NLP**
+- 💡 I believe the future isn't AI replacing humans — it's humans getting better at working *with* AI
+
+#### 🎯 Currently Exploring
+
+> How do humans and AI agents build shared memory? How do you calibrate trust across different agents? What does "getting better at AI collaboration" actually look like?
+
+These questions drive everything I build.
 
 ---
 
@@ -100,7 +107,14 @@
 ### 🌐 Connect
 
 <p align="center">
-  <em>Feel free to explore my repos and drop a ⭐ if you find something useful!</em>
+  <em>I'm exploring how humans and AI agents can work together better.<br/>
+  If you're interested in agent orchestration, trust calibration, or AI-human collaboration — let's connect.</em>
+</p>
+
+<p align="center">
+  <a href="https://github.com/cyq1017/conductor">🎵 Conductor</a> · 
+  <a href="https://github.com/cyq1017/wenyuan">🏛️ WenYuan</a> · 
+  <a href="https://github.com/cyq1017?tab=repositories">📂 All Repos</a>
 </p>
 
 <p align="center">
