@@ -1,6 +1,6 @@
-<h1 align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=4000&pause=1000&color=00D4AA&center=true&vCenter=true&width=600&lines=Hey+%F0%9F%91%8B+I'm+CYQ;AI+Engineer+%26+Enthusiast;Building+Intelligent+Tools" alt="Typing SVG" />
-</h1>
+<p align="center">
+  <img src="https://ishan-rest.vercel.app/svg/banner/blackhole/CYQ" alt="CYQ" width="100%"/>
+</p>
 
 <p align="center">
   <em>AI Engineer & Enthusiast · Multimodal · Agentic AI · NLP</em>
