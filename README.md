@@ -125,19 +125,8 @@
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=cyq1017&theme=tokyo-night&hide_border=true&area=true" alt="Activity Graph" width="90%"/>
 </p>
 
----
 
-### 🐍 Contribution Snake
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/cyq1017/cyq1017/blob/output/github-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://github.com/cyq1017/cyq1017/blob/output/github-snake.svg" />
-    <img alt="github-snake" src="https://github.com/cyq1017/cyq1017/blob/output/github-snake.svg" width="100%"/>
-  </picture>
-</p>
-
----
 
 ### 🌐 Connect
 
