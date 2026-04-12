@@ -68,11 +68,13 @@
       <a href="https://github.com/cyq1017/awesome-agent-rules/stargazers"><img src="https://img.shields.io/github/stars/cyq1017/awesome-agent-rules?style=flat-square" alt="Stars"/></a>
     </td>
     <td align="center" width="50%">
+      <a href="https://github.com/cyq1017/awesome-context-md">
+        <img src="https://github-readme-stats.vercel.app/api/pin/?username=cyq1017&repo=awesome-context-md&theme=tokyonight&hide_border=true" alt="Awesome Context MD"/>
+      </a>
+      <br/>
+      <sub>📄 Curated CONTEXT.md templates — help AI agents instantly understand your codebase</sub>
       <br/><br/>
-      <b>🚀 More coming soon...</b>
-      <br/><br/>
-      <sub>OrbitOS · Agent Skills · Notebook-to-Obsidian</sub>
-      <br/><br/><br/>
+      <a href="https://github.com/cyq1017/awesome-context-md/stargazers"><img src="https://img.shields.io/github/stars/cyq1017/awesome-context-md?style=flat-square" alt="Stars"/></a>
     </td>
   </tr>
 </table>
